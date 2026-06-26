@@ -5,8 +5,206 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:st10475807poe_prog_26"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+               Title="MainWindow" Height="450" Width="800"
+       Background="LightCyan">
+
     <Grid>
+
+        <!-- 
+            HOME GRID
+            This grid serves as the main landing page  of the application.
+            It contains a logo for AI , a welcome message to greet users,
+            and a navigation button to proceed to the next section.
+            Currently hidden by default.
+        -->
+        <Grid x:Name="home_grid" Visibility="Visible">
+
+            <!-- Logo -->
+            <Image 
+               Source="/logo.jpg" 
+                Height="200"
+                Width="300"
+                Margin="0,0,0,200"
+                   />
+            <!-- welcome message-->
+            <TextBlock
+                Text="hello welcome to MCV cyber security chatbot"
+                Height="20"
+                Width="270"
+                TextAlignment="Center"
+                Margin="0,30,0,0"
+                FontFamily="Arial Rounded MT Bold"
+                Foreground="Navy"
+                />
+
+            <!-- button to continue-->
+            <Button 
+                Height="40"
+                Width="300"
+                Margin="0,200,0,0"
+                Content="continue"
+                Foreground="White"
+                Background="Black"
+                Click="proceed"
+                />
+
+        </Grid>
+
+        <!-- 
+            USERNAME GRID
+            This grid is for prompting the user for username.
+            It contains a logo for AI, a textbox for users to enter their name,
+            and a submit button to save the username.
+            Hidden .
+        -->
+
+        <Grid x:Name="username_grid" Visibility="Hidden">
+
+
+            <!-- Logo -->
+            <Image 
+                Source="/logo.jpg"
+                Height="200"
+                Width="300"
+                Margin="0,0,0,200"
+                   />
+            <!-- Hint message-->
+            <TextBlock
+                Text="Enter username"
+                Height="20"
+                Width="270"
+                TextAlignment="Justify"
+                Margin="0,30,0,0"
+                FontFamily="Arial Rounded MT Bold"
+                Foreground="Navy"
+                />
+
+            <!-- Enter/Prompt username-->
+            <TextBox
+                Height="40"
+                Width="270"
+                TextAlignment="Center"
+                Margin="0,100,0,0"
+                FontFamily="Arial Rounded MT Bold"
+                x:Name="usernames_input"
+                Background="Black"
+                Foreground="White"
+                />
+
+            <!-- error message-->
+            <TextBox
+    Height="40"
+    Width="270"
+    TextAlignment="Center"
+    Margin="0,100,0,0"
+    FontFamily="Arial Rounded MT Bold"
+   
+    x:Name="usernames_inputs"
+    Foreground="White"
+               Background="Black"
+               
+    MaxLength="20"
+/>
+
+            <!-- button to submit name-->
+            <Button 
+        Height="40"
+        Width="270"
+        Margin="0,250,0,0"
+        Content="submit username"
+                Foreground="White"
+ Background="Black"
+        Click="submit_name"
+                
+        />
+
+        </Grid>
+
+        <!-- 
+            CHAT GRID
+            This grid handles all messaging and conversation-related features of the application.
+            It contains a ListView to display chat messages, a textbox for typing questions,
+            and a submit button to send the question to the chat.
+            Starting in a hidden state.
         
+        -->
+
+        <Grid x:Name="chat_grid" Visibility="Hidden">
+
+
+            <!-- Quick action buttons - direct GUI entry points for the
+                 quiz mini-game (Task 2) and activity log (Task 4),
+                 in addition to typing natural language commands (Task 3) -->
+            <Button
+                x:Name="quizButton"
+                Content="Start Quiz"
+                Height="30"
+                Width="90"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Margin="0,10,210,0"
+                Foreground="White"
+                Background="DarkSlateBlue"
+                Click="quizButton_Click"
+                />
+
+            <Button
+                x:Name="logButton"
+                Content="Activity Log"
+                Height="30"
+                Width="90"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Margin="0,10,110,0"
+                Foreground="White"
+                Background="DarkSlateGray"
+                Click="logButton_Click"
+                />
+
+            <Button
+                x:Name="helpButton"
+                Content="Help"
+                Height="30"
+                Width="90"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Margin="0,10,10,0"
+                Foreground="White"
+                Background="DimGray"
+                Click="helpButton_Click"
+                />
+
+
+            <!-- List view to show messages show messages-->
+            <ListView  
+                x:Name="chats" 
+                Height="300"
+                Margin="0,0,0,120"
+                />
+
+
+            <!-- TextBox to prompt questions-->
+            <TextBox
+                x:Name="question"
+                Height="50"
+                Width="480"
+                Margin="0,300,300,0"
+                Background="Black"
+                Foreground="White"
+                />
+
+            <!-- button to submit -->
+            <Button
+                Height="50"
+                Width="280"
+                Margin="490,300,0,0"
+                Content="send "
+                Click="send"
+                Foreground="White"
+ Background="Black"
+                />
+
+        </Grid>
+
     </Grid>
 </Window>
