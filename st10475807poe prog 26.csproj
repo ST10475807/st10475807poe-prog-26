@@ -57,6 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="quiz_manager.cs" />
     <Compile Include="respons.cs" />
+    <Compile Include="task_manager.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
