@@ -47,8 +47,8 @@ namespace demo
         //true while the bot is waiting for a yes/no/date reply to
         //"would you like to set a reminder for this task?"
         bool awaiting_reminder_response = false;
-
-
+        private object usernames_inputs;
+        private object question;
 
         public MainWindow()
         {
@@ -62,6 +62,11 @@ namespace demo
 
             //call the voice method
             greet.greet();
+        }
+
+        private void InitializeComponent()
+        {
+            throw new NotImplementedException();
         }
 
 
